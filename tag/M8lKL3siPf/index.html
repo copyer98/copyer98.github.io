@@ -1,0 +1,205 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>技术 | Gridea</title>
+
+<link rel="shortcut icon" href="https://copyer98.github.io/favicon.ico?v=1646485390631">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://copyer98.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Gridea
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1646485390631"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+        <div class="current-tag-container">
+            <h2 class="title gt-c-content-color-first">
+                #技术
+            </h2>
+        </div>
+        <div class="post-list-container">
+    <div class="post-inner">
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://copyer98.github.io/post/安装 Kali Linux 后需要做的 20 件事/">
+                            <span class="post-title gt-c-content-color-first">安装 Kali Linux 后需要做的 20 件事</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        ##安装 Kali Linux 后需要做的 20 件事
+
+专门针对Kali用户
+
+Kali Linux是来自Debian的一个特殊版本，Kali Linux同样存在Debian Linux的许多问题。这部分为读者介绍如何解决那些问题。它们并不是Kali Linux特有的问题，你可以不用理它们；不过我看到错误，强迫症就会发作，非解决错误不可。
+
+实用工具和软件
+
+这部分汇集了我觉得有用的一批实用工具和软件。这些是大多数其他Linux发行版里面也有的日常软件，或者至少我认为它们应作为默认安装系统的一部分而出现。
+
+改进和辅助功能
+
+Kali Linux天生具有启动速度快、占用资源少的特点。但如果你有一些CPU和GPU能力可用，不妨试着让Kali Linix的外观更靓丽一些。
+专门针对Kali用户
+1. 解决有线网络的&quot;设备无法托管&quot;错误
+如果你希望NetworkManager（网络管理器）处理在/etc/network/interfaces中启用的接口，只要在/etc/NetworkManager/NetworkManager.conf中设置managed=true。所以，该文件看起来就像：
+[main] plugins=ifupdown,keyfile [ifupdown] managed=true 
+
+
+请阅读全文：《Debian或Kali Linux中解决有线网络接口的&quot;设备无法托管&quot;错误》。
+2. 修复默认的软件库
+最简单的办法就是，编辑/etc/apt/sources.list，去掉每一行或在开头用#注释每一行，并添加下面这几行：
+leafpad /etc/apt/sources.list 
+
+用下面几行，注释或去掉现有的配置：
+## Regular repositories deb http://http.kali.org/kali kali main non-free contrib deb http://security.kali.org/kali-security kali/updates main contrib non-free ## Source repositories deb-src http://http.kali.org/kali kali main non-free contrib deb-src http://security.kali.org/kali-security kali/updates main contrib non-free 
+
+保存并关闭文件。想了解相关细节和介绍，请参阅《添加官方的Kali Linux软件库》一文。
+3. 更新、升级和发行版升级
+对你安装的Kali进行清洁、更新、升级和发行版升级等处理。
+apt-get clean &amp;&amp; apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y 
+
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2019-01-08 ·
+                        </time>
+                        
+                            <a href="https://copyer98.github.io/tag/M8lKL3siPf/" class="post-tag">
+                                # 技术
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+    </div>
+</div>
+        <div class="pagination-container">
+    
+    
+</div>
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://copyer98.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

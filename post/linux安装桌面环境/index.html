@@ -1,0 +1,197 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>linux桌面环境 | Gridea</title>
+
+<link rel="shortcut icon" href="https://copyer98.github.io/favicon.ico?v=1646485390631">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://copyer98.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Gridea
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1646485390631"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    linux桌面环境
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2017-12-16 ·
+                    </time>
+                    
+                        <a href="https://copyer98.github.io/tag/iKDdS6q-0j/" class="post-tags">
+                            # Config
+                        </a>
+                    
+                        <a href="https://copyer98.github.io/tag/BYwXqZneZP/" class="post-tags">
+                            # Linux
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="linux-桌面环境">linux 桌面环境</h1>
+<p>标签： linux 使用</p>
+<hr>
+<h2 id="ubuntu-和她的衍生">ubuntu 和她的衍生</h2>
+<ol>
+<li>首先，ubuntu server 版本的安装这里就不再赘述，基本的还是三个步骤，首先是下载镜像，然后使用 ultraISO 刻录至 u 盘，最后通过 U 盘引导进行安装。安装过程中，会要求你输入用户名和密码，一定要牢记，因为后续软件的安装都需要密码。</li>
+<li>然后，login 进入系统之后，开始进行用户界面的安装。首先输入如下命令：<br>
+<code>sudo apt-get install xinit</code></li>
+<li>上述安装完毕之后，再安装环境管理器。本人亲测安装的是 GNOME。使用如下命令安装：<br>
+<code>sudo apt-get install gdm</code></li>
+</ol>
+<!--more-->
+<ol start="4">
+<li>然后，安装桌面环境。本人亲测安装的是 KUbuntu。安装命令如下：<br>
+<code>sudo apt-get install kubuntu-desktop</code></li>
+</ol>
+<h2 id="centos">centos</h2>
+<p>1、首先安装X(X Window System),命令为<br>
+<code>yum groupinstall &quot;X Window System&quot;</code> 回车（注意有引号）</p>
+<p>2、由于这个软件组比较大，安装过程会比较慢，安装完成会出现complete！</p>
+<p>3、检查一下我们已经安装的软件以及可以安装的软件，用命令<br>
+<code>yum grouplist</code> 回车</p>
+<p>4、然后安装我们需要的图形界面软件，GNOME(GNOME Desktop)<br>
+这里需要特别注意！！！！<br>
+一定要注意 名称必须对应 不同版本的centOS的软件名可能不同 其他Linux系统类似<br>
+否则会出现<code>No packages in any requested group available to install or update</code> 的错误。<br>
+5、同样的。<br>
+由于这个软件组比第一个要大很多（包含700个左右的软件），安装过程会很慢，请耐心等待。安装完成会出现complete！</p>
+<p>6、安装完成后我们可以通过命令 startx 进入图形界面，第一次进入会比较慢，请耐心等待。（可能需要重启，命令为reboot）<br>
+如果启动正常的话，到这里就可以不用继续向下看了，如果出现问题，那么请继续看。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">温故而知新</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://copyer98.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
