@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>linux桌面环境 | Gridea</title>
+<title>linux基本知识 | Gridea</title>
 
 <link rel="shortcut icon" href="https://copyer98.github.io/favicon.ico?v=1646498792143">
 
@@ -101,53 +101,122 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    linux桌面环境
+                    linux基本知识
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2017-12-16 ·
+                        · 2017-12-18 ·
                     </time>
                     
                         <a href="https://copyer98.github.io/tag/iKDdS6q-0j/" class="post-tags">
                             # Config
                         </a>
                     
-                        <a href="https://copyer98.github.io/tag/BYwXqZneZP/" class="post-tags">
-                            # Linux
+                        <a href="https://copyer98.github.io/tag/TDGmYW2wR5/" class="post-tags">
+                            # linux
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <h1 id="linux-桌面环境">linux 桌面环境</h1>
-<p>标签： linux 使用</p>
-<hr>
-<h2 id="ubuntu-和她的衍生">ubuntu 和她的衍生</h2>
-<ol>
-<li>首先，ubuntu server 版本的安装这里就不再赘述，基本的还是三个步骤，首先是下载镜像，然后使用 ultraISO 刻录至 u 盘，最后通过 U 盘引导进行安装。安装过程中，会要求你输入用户名和密码，一定要牢记，因为后续软件的安装都需要密码。</li>
-<li>然后，login 进入系统之后，开始进行用户界面的安装。首先输入如下命令：<br>
-<code>sudo apt-get install xinit</code></li>
-<li>上述安装完毕之后，再安装环境管理器。本人亲测安装的是 GNOME。使用如下命令安装：<br>
-<code>sudo apt-get install gdm</code></li>
-</ol>
+                    <p>标签： linux</p>
+<p>Linux 的命令行</p>
+<h2 id="第一章">第一章</h2>
+<p>安装桌面环境: login 进入系统之后，开始进行用户界面的安装。首先输入如下命令：<br>
+<code>sudo apt-get install xinit</code><br>
+上述安装完毕之后，再安装环境管理器。本人亲测安装的是 GNOME。使用如下命令安装：<br>
+<code>sudo apt-get install gdm</code><br>
+然后，安装桌面环境。</p>
 <!--more-->
-<ol start="4">
-<li>然后，安装桌面环境。本人亲测安装的是 KUbuntu。安装命令如下：<br>
-<code>sudo apt-get install kubuntu-desktop</code></li>
+<p>本人亲测安装的是 KUbuntu。安装命令如下：</p>
+<p><code>sudo apt-get install kubuntu-desktop</code><br>
+<code>sudo apt-get install gnome-session-fallback</code></p>
+<p>或者：</p>
+<p><code>sudo apt-get install gnome-panel</code><br>
+。安装时的界面如下所示</p>
+<p>安装中文语言包<br>
+<code>sudo apt-get install language-pack-zh-han*</code></p>
+<p>安装 gnome 包<br>
+<code>sudo apt-get install language-pack-gnome-zh-han*</code></p>
+<p>安装 kde 包<br>
+<code>sudo apt-get install language-pack-kde-zh-han*</code><br>
+到这里就能够查看目录下面的中文字符了。</p>
+<p>最后运行语言支持检查<br>
+<code>sudo apt install $(check-language-support)</code><br>
+会更新最新的语言支持包设置语言:改英文: 用 vi(或 nano 等文本编辑器)打开 /etc/default/locale 文件将原来的配置内容修改为<br>
+LANG=”en_US.UTF-8″<br>
+LANGUAGE=”en_US:en”<br>
+再在终端下运行：<br>
+<code>locale-gen -en_US:en</code><br>
+注销或重启后，即可恢复为英文的语言环境。改为中文:<br>
+1、修改／etc/default/locale<br>
+如不存在则新建一个如下：</p>
+<blockquote>
+<p>LANG='en_US' #中文可以用 zh_CN<br>
+LANGUAGE='en_US:en' #中文可以用 zh_CN:zh</p>
+</blockquote>
+<p>2、reboot 即可<br>
+locale 命令可以列出当前系统所用的所有语言设置</p>
+<pre><code>Sudo apt install
+Sudo apt install
+sudo apt
+</code></pre>
+<p>apt 1.4 (amd64)<br>
+用法： apt [选项] 命令</p>
+<p>命令行软件包管理器 apt 提供软件包搜索，管理和信息查询等功能。它提供的功能与其他 APT 工具相同（像 apt-get 和 apt-cache），但是默认情况下被设置得更适合交互。</p>
+<p>常用命令：</p>
+<pre><code>  list - 根据名称列出软件包
+  search - 搜索软件包描述
+  show - 显示软件包细节
+  install - 安装软件包
+  remove - 移除软件包
+  autoremove - 卸载所有自动安装且不再使用的软件包
+  update - 更新可用软件包列表
+  upgrade - 通过 安装/升级 软件来更新系统
+  full-upgrade - 通过 卸载/安装/升级 来更新系统
+  edit-sources - 编辑软件源信息文件
+</code></pre>
+<p>参见 apt(8) 以获取更多关于可用命令的信息。程序配置选项及语法都已经在 apt.conf(5) 中阐明。欲知如何配置软件源，请参阅 sources.list(5)。软件包及其版本偏好可以通过 apt_preferences(5) 来设置。关于安全方面的细节可以参考 apt-secure(8).<br>
+本 APT 具有超级牛力。</p>
+<p><img src="https://i.imgur.com/Ns68ca3.png" alt="" loading="lazy"><br>
+好玩的软件 oneko,cmatrix,</p>
+<p>软件安装,</p>
+<pre><code>gdebi ,gedit ,cinnamon ,mate,xfce,unity,gnome-fontviewer,或者 font-manager,gnome-ternimal,firefox,screefetch,file-roller(压缩包管理器),tree,transmission(迅雷),gnome-software 软件更新器,gnome-packagekit 软件包 unbuntu-desktop, Software-properties-gtk(软件源,ppa 更新) Gnome-software (软件商店) Gnome-systemmoniter(任务管理器) FTP/SFTP 客户端: 声音视频:audacity,vlc,rhythmbox 图像处理:gimp 抓图工具:shutter gnome-web-photo Mypaint,darktable,inkscape,dia,shotwell, 录屏工具:gek-recordmydesktop 视频后期处理:openshot
+</code></pre>
+<p>搜狗输入法安装,安装 gdebi<br>
+进入搜狗输入法目录输入命令行: <code>sudo gdebi sogoupinyin_2.1.0.0086_amd64.deb</code><br>
+安装 cinnamon :<code>sudo apt install cinnamon</code><br>
+然后运行<code>cinnamon –replace</code><br>
+运行图形化命令,gksu<br>
+Filezilla:<code>sudo aptitude install –y filezilla</code></p>
+<p>安装主题:</p>
+<ol>
+<li>elementary os 的主题</li>
 </ol>
-<h2 id="centos">centos</h2>
-<p>1、首先安装X(X Window System),命令为<br>
-<code>yum groupinstall &quot;X Window System&quot;</code> 回车（注意有引号）</p>
-<p>2、由于这个软件组比较大，安装过程会比较慢，安装完成会出现complete！</p>
-<p>3、检查一下我们已经安装的软件以及可以安装的软件，用命令<br>
-<code>yum grouplist</code> 回车</p>
-<p>4、然后安装我们需要的图形界面软件，GNOME(GNOME Desktop)<br>
-这里需要特别注意！！！！<br>
-一定要注意 名称必须对应 不同版本的centOS的软件名可能不同 其他Linux系统类似<br>
-否则会出现<code>No packages in any requested group available to install or update</code> 的错误。<br>
-5、同样的。<br>
-由于这个软件组比第一个要大很多（包含700个左右的软件），安装过程会很慢，请耐心等待。安装完成会出现complete！</p>
-<p>6、安装完成后我们可以通过命令 startx 进入图形界面，第一次进入会比较慢，请耐心等待。（可能需要重启，命令为reboot）<br>
-如果启动正常的话，到这里就可以不用继续向下看了，如果出现问题，那么请继续看。</p>
+<pre><code>sudo add-apt-repository ppa:elementary-os/daily
+sudo apt-get update
+sudo apt-get install elementary-icon-theme
+</code></pre>
+<ol start="2">
+<li>ubuntukylin ukui 主题, www.ukui.org 官网教程安装这个就好</li>
+<li>zorinos 主题安装方法，首先打开终端输入以下命令安装主题：</li>
+</ol>
+<pre><code>sudo add-apt-repository ppa:noobslab/themes
+sudo apt-get update
+sudo apt-get install zorinos-themes
+</code></pre>
+<p>在终端输入以下命令安装图标主题：</p>
+<pre><code>sudo add-apt-repository ppa:noobslab/icons2
+sudo apt-get update
+sudo apt-get install zorinos-icons
+</code></pre>
+<p>安装或使用调节工具：如 Unity Tweak Tool、Gnome-tweak-tool 或者 Ubuntu-Tweak 来启用主题和图标。</p>
+<h2 id="第二章-linux-的文件系统">第二章 linux 的文件系统</h2>
+<p>Lib 各种动态链接库存放的位置,类似 windows 的 dll 文件,只不过 linux 的是.so 文件,<br>
+<img src="https://i.imgur.com/lWVyBIM.png" alt="" loading="lazy"></p>
+<pre><code>```
+
+```
+</code></pre>
 
                 </div>
             </article>
@@ -156,8 +225,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://copyer98.github.io/post/node设置/" class="post-title gt-a-link">
-                    node配置
+                <a href="https://copyer98.github.io/post/linux安装桌面环境/" class="post-title gt-a-link">
+                    linux桌面环境
                 </a>
             </div>
         
